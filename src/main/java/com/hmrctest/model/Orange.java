@@ -11,4 +11,9 @@ public class Orange implements Product {
     public String getName() {
         return "Orange";
     }
+
+    @Override
+    public String toString() {
+        return getName();
+    }
 }

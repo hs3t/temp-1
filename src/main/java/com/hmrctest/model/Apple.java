@@ -11,4 +11,9 @@ public class Apple implements Product {
     public String getName() {
         return "Apple";
     }
+
+    @Override
+    public String toString() {
+        return getName();
+    }
 }
