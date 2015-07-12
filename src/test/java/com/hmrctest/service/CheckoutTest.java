@@ -43,14 +43,37 @@ public class CheckoutTest {
     }
 
     @Test
-    public void testCheckoutWithMoreThanOneProduct() {
+    public void testCheckoutWithOneOffer() {
         Checkout checkout = new Checkout();
         ArrayList<Product> products = new ArrayList();
         products.add(new Apple());
         products.add(new Orange());
         products.add(new Apple());
         products.add(new Apple());
-        assertTrue("Price of basket is 205", checkout.process(products) == 205);
+        assertTrue("Price of basket is 145", checkout.process(products) == 145);
     }
 
+    @Test
+    public void testCheckoutWithTwoOffersProduct() {
+        Checkout checkout = new Checkout();
+        ArrayList<Product> products = new ArrayList();
+        products.add(new Apple());
+        products.add(new Orange());
+        products.add(new Orange());
+        products.add(new Orange());
+        products.add(new Apple());
+        products.add(new Apple());
+        products.add(new Apple());
+        assertTrue("Price of basket is 170", checkout.process(products) == 170);
+    }
+
+    @Test
+    public void testCheckoutWithOneProductWithOffer() {
+        Checkout checkout = new Checkout();
+        ArrayList<Product> products = new ArrayList();
+        products.add(new Orange());
+        products.add(new Orange());
+        products.add(new Orange());
+        assertTrue("Price of basket is 50", checkout.process(products) == 50);
+    }
 }

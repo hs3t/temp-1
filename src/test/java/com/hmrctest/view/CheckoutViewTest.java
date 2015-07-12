@@ -21,8 +21,8 @@ public class CheckoutViewTest {
         ArrayList<Product> products = new ArrayList();
         products.add(new Apple());
         products.add(new Orange());
+        products.add(new Orange());
         products.add(new Apple());
-        products.add(new Apple());
-        assertThat("Price of basket is 205", view.output(products), is("[Apple, Orange, Apple, Apple] > £2.05"));
+        assertThat("Price of basket is £1.1", view.output(products), is("[Apple, Orange, Orange, Apple] > £1.1"));
     }
 }
